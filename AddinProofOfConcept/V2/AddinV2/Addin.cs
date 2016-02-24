@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AddinV2.V2
 {
-    [AddIn("Addin", Version = "2.0.0.0")]
+    [AddIn("Addin V2", Version = "2.0.0.0")]
     public class Addin : IV2
     {
         ICallbackV2 _callback;
