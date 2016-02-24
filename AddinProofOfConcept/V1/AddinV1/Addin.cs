@@ -1,8 +1,8 @@
-﻿using AddinView;
+﻿using AddinView.V1;
 using System;
 using System.AddIn;
 
-namespace AddinV1
+namespace AddinV1.V1
 {
     [AddIn("AddinV1")]
     public class Addin : IV1

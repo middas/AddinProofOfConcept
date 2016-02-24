@@ -1,6 +1,6 @@
 ﻿using System.AddIn.Pipeline;
 
-namespace AddinView
+namespace AddinView.V1
 {
     [AddInBase]
     public interface IV1

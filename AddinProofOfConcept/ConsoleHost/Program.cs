@@ -1,4 +1,4 @@
-﻿using HostView;
+﻿using HostView.V1;
 using System;
 using System.AddIn.Hosting;
 using System.Collections.ObjectModel;

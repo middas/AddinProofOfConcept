@@ -1,21 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractV1", "ContractV1\ContractV1.csproj", "{4610FF77-53AA-4C7A-BCCE-2F04D20F1439}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractV1", "V1\ContractV1\ContractV1.csproj", "{4610FF77-53AA-4C7A-BCCE-2F04D20F1439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinView", "AddinView\AddinView.csproj", "{E798C8F0-0610-4AEC-AEE1-26432B6333B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinView", "V1\AddinView\AddinView.csproj", "{E798C8F0-0610-4AEC-AEE1-26432B6333B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostView", "HostView\HostView.csproj", "{5F22254C-FDC6-460F-B71A-8FDAD8A4C812}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostView", "V1\HostView\HostView.csproj", "{5F22254C-FDC6-460F-B71A-8FDAD8A4C812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinAdapter", "AddinAdapter\AddinAdapter.csproj", "{FE08E0B0-91D7-41B0-B6B1-95E7446A914F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinAdapter", "V1\AddinAdapter\AddinAdapter.csproj", "{FE08E0B0-91D7-41B0-B6B1-95E7446A914F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostAdapter", "HostAdapter\HostAdapter.csproj", "{25386072-BC7E-4735-BB35-495D1C43C05C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostAdapter", "V1\HostAdapter\HostAdapter.csproj", "{25386072-BC7E-4735-BB35-495D1C43C05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinV1", "AddinV1\AddinV1.csproj", "{D685CC6D-9700-4C60-B78A-B580BE072D95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinV1", "V1\AddinV1\AddinV1.csproj", "{D685CC6D-9700-4C60-B78A-B580BE072D95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHost", "ConsoleHost\ConsoleHost.csproj", "{336715F8-ED69-4101-841D-CD9512F89A1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "V1", "V1", "{4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +56,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4610FF77-53AA-4C7A-BCCE-2F04D20F1439} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
+		{E798C8F0-0610-4AEC-AEE1-26432B6333B5} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
+		{5F22254C-FDC6-460F-B71A-8FDAD8A4C812} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
+		{FE08E0B0-91D7-41B0-B6B1-95E7446A914F} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
+		{25386072-BC7E-4735-BB35-495D1C43C05C} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
+		{D685CC6D-9700-4C60-B78A-B580BE072D95} = {4274DA7E-5FE6-4671-8FD1-9D70A95DAA73}
 	EndGlobalSection
 EndGlobal

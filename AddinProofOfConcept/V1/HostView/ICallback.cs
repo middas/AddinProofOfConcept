@@ -1,15 +1,13 @@
 ﻿using System;
-using System.AddIn.Contract;
 using System.AddIn.Pipeline;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContractV1
+namespace HostView.V1
 {
-    [AddInContract]
-    public interface ICallbackContractV1 : IContract
+    public interface ICallback
     {
         void DoWork();
     }

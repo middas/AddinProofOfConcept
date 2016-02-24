@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E798C8F0-0610-4AEC-AEE1-26432B6333B5}</ProjectGuid>
+    <ProjectGuid>{FE08E0B0-91D7-41B0-B6B1-95E7446A914F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AddinView</RootNamespace>
-    <AssemblyName>AddinView</AssemblyName>
+    <RootNamespace>AddinAdapter</RootNamespace>
+    <AssemblyName>AddinAdapter</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\$(Configuration)\Pipeline\AddInViews\</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddInSideAdapters\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\$(Configuration)\Pipeline\AddInViews\</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddInSideAdapters\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.AddIn" />
+    <Reference Include="System.AddIn.Contract" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICallback.cs" />
-    <Compile Include="IV1.cs" />
+    <Compile Include="AddinAdapter.cs" />
+    <Compile Include="CallbackConverter.cs" />
+    <Compile Include="CallbackImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddinView\AddinView.csproj">
+      <Project>{e798c8f0-0610-4aec-aee1-26432b6333b5}</Project>
+      <Name>AddinView</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ContractV1\ContractV1.csproj">
+      <Project>{4610ff77-53aa-4c7a-bcce-2f04d20f1439}</Project>
+      <Name>ContractV1</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

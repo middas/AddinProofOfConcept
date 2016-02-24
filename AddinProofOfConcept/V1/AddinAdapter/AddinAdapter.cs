@@ -1,8 +1,8 @@
-﻿using AddinView;
-using ContractV1;
+﻿using AddinView.V1;
+using ContractV1.V1;
 using System.AddIn.Pipeline;
 
-namespace AddinAdapter
+namespace AddinAdapter.V1
 {
     [AddInAdapter]
     public class AddinAdapter : ContractBase, IContractV1

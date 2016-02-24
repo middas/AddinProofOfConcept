@@ -1,8 +1,8 @@
-﻿using ContractV1;
-using HostView;
+﻿using ContractV1.V1;
+using HostView.V1;
 using System.AddIn.Pipeline;
 
-namespace HostAdapter
+namespace HostAdapter.V1
 {
     [HostAdapter]
     public class HostAdapter : IV1

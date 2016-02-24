@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HostView
+namespace AddinView.V1
 {
+    [AddInBase]
     public interface ICallback
     {
         void DoWork();

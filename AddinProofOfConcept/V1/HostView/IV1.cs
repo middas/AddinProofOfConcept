@@ -1,4 +1,4 @@
-﻿namespace HostView
+﻿namespace HostView.V1
 {
     public interface IV1
     {
