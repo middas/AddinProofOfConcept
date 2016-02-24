@@ -7,8 +7,8 @@ namespace AddinView.V1
     {
         string GetName();
 
-        void WriteToConsole();
-
         void Initialize(ICallback callback);
+
+        void WriteToConsole();
     }
 }

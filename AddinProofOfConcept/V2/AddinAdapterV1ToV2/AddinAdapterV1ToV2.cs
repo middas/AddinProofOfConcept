@@ -1,12 +1,7 @@
 ﻿using AddinView.V1;
 using ContractV2.V2;
-using System;
 using System.AddIn.Pipeline;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddinAdapterV1ToV2.V2
 {
@@ -25,15 +20,15 @@ namespace AddinAdapterV1ToV2.V2
             return _view.GetName();
         }
 
+        public void Initialize(ICallbackContractV2 callback)
+        {
+            _view.Initialize(CallbackConverter.FromContractV2(callback));
+        }
+
         public void WriteToConsole(string output)
         {
             Debug.WriteLine("Outout is ignored: ", output);
             _view.WriteToConsole();
-        }
-
-        public void Initialize(ICallbackContractV2 callback)
-        {
-            _view.Initialize(CallbackConverter.FromContractV2(callback));
         }
     }
 }

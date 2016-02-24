@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.AddIn.Pipeline;
+﻿using ContractV2.V2;
 using HostView.V1;
-using ContractV2.V2;
+using System.AddIn.Pipeline;
 
 namespace HostAdapterV1ToV2.V2
 {
@@ -26,14 +21,14 @@ namespace HostAdapterV1ToV2.V2
             return _contract.GetName();
         }
 
-        public void WriteToConsole()
-        {
-            _contract.WriteToConsole("V1 doesn't support this");
-        }
-
         public void Initialize(ICallback callback)
         {
             _contract.Initialize(CallbackConverter.ToContractV1ToV2(callback));
+        }
+
+        public void WriteToConsole()
+        {
+            _contract.WriteToConsole("V1 doesn't support this");
         }
     }
 }

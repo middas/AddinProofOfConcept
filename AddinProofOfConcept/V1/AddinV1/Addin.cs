@@ -14,15 +14,15 @@ namespace AddinV1.V1
             return "Addin V1";
         }
 
+        public void Initialize(ICallback callback)
+        {
+            _callback = callback;
+        }
+
         public void WriteToConsole()
         {
             Console.WriteLine("Hello World!");
             _callback.DoWork();
-        }
-
-        public void Initialize(ICallback callback)
-        {
-            _callback = callback;
         }
     }
 }

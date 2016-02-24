@@ -21,14 +21,14 @@ namespace HostAdapter.V1
             return _contract.GetName();
         }
 
-        public void WriteToConsole()
-        {
-            _contract.WriteToConsole();
-        }
-
         public void Initialize(ICallback callback)
         {
             _contract.Initialize(CallbackConverter.ToContract(callback));
+        }
+
+        public void WriteToConsole()
+        {
+            _contract.WriteToConsole();
         }
     }
 }

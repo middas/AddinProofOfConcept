@@ -19,14 +19,14 @@ namespace AddinAdapter.V1
             return _contract.GetName();
         }
 
-        public void WriteToConsole()
-        {
-            _contract.WriteToConsole();
-        }
-
         public void Initialize(ICallbackContractV1 callback)
         {
             _contract.Initialize(CallbackConverter.FromContract(callback));
+        }
+
+        public void WriteToConsole()
+        {
+            _contract.WriteToConsole();
         }
     }
 }

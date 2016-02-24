@@ -1,11 +1,6 @@
 ﻿using AddinViewV2.V2;
 using ContractV2.V2;
-using System;
 using System.AddIn.Pipeline;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddinAdapterV2.V2
 {
@@ -24,14 +19,14 @@ namespace AddinAdapterV2.V2
             return _view.GetName();
         }
 
-        public void WriteToConsole(string output)
-        {
-            _view.WriteToConsole(output);
-        }
-
         public void Initialize(ICallbackContractV2 callback)
         {
             _view.Initialize(CallbackConverter.FromContract(callback));
+        }
+
+        public void WriteToConsole(string output)
+        {
+            _view.WriteToConsole(output);
         }
     }
 }

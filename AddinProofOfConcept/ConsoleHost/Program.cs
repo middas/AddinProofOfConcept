@@ -2,20 +2,11 @@
 using System;
 using System.AddIn.Hosting;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace ConsoleHost
 {
     internal class Program
     {
-        private class CallbackHandler : ICallbackV2
-        {
-            public void DoWork()
-            {
-                Console.WriteLine("Successfully called DoWork()");
-            }
-        }
-
         private static void Main(string[] args)
         {
             // Assume that the current directory is the application folder,
@@ -65,6 +56,14 @@ namespace ConsoleHost
                 // Run the add-in.
                 v2.WriteToConsole("Hello World From Host!");
                 Console.WriteLine(v2.GetName());
+            }
+        }
+
+        private class CallbackHandler : ICallbackV2
+        {
+            public void DoWork()
+            {
+                Console.WriteLine("Successfully called DoWork()");
             }
         }
     }

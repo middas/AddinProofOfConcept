@@ -1,10 +1,5 @@
 ﻿using ContractV2.V2;
 using HostViewV2.V2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.AddIn.Pipeline;
 
 namespace HostAdapterV2.V2
@@ -26,14 +21,14 @@ namespace HostAdapterV2.V2
             return _contract.GetName();
         }
 
-        public void WriteToConsole(string output)
-        {
-            _contract.WriteToConsole(output);
-        }
-
         public void Initialize(ICallbackV2 callback)
         {
             _contract.Initialize(CallbackConverter.ToContract(callback));
+        }
+
+        public void WriteToConsole(string output)
+        {
+            _contract.WriteToConsole(output);
         }
     }
 }

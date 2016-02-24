@@ -8,8 +8,8 @@ namespace ContractV1.V1
     {
         string GetName();
 
-        void WriteToConsole();
-
         void Initialize(ICallbackContractV1 callback);
+
+        void WriteToConsole();
     }
 }

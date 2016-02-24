@@ -1,9 +1,4 @@
-﻿using System;
-using System.AddIn.Pipeline;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.AddIn.Pipeline;
 
 namespace AddinViewV2.V2
 {
@@ -12,8 +7,8 @@ namespace AddinViewV2.V2
     {
         string GetName();
 
-        void WriteToConsole(string output);
-
         void Initialize(ICallbackV2 callback);
+
+        void WriteToConsole(string output);
     }
 }

@@ -1,11 +1,6 @@
 ﻿using ContractV2.V2;
 using HostViewV2.V2;
-using System;
 using System.AddIn.Pipeline;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostAdapterV2.V2
 {
