@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace ContractV2.V2
 {
-    [AddInContract]
     public interface ICallbackContractV2 : IContract
     {
         void DoWork();

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace AddinViewV2.V2
 {
-    [AddInBase]
     public interface ICallbackV2
     {
         void DoWork();

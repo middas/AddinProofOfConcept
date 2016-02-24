@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.AddIn.Pipeline;
-using ContractV2.V2;
 
 namespace HostAdapterV2.V2
 {

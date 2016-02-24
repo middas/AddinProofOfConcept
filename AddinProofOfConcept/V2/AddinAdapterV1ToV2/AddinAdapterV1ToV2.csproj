@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{540172C1-081C-471A-AF3F-298825339A0D}</ProjectGuid>
+    <ProjectGuid>{838F8280-BBF4-4E11-A94A-6EB1AE7C147B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AddinV2</RootNamespace>
-    <AssemblyName>AddinV2</AssemblyName>
+    <RootNamespace>AddinAdapterV1ToV2</RootNamespace>
+    <AssemblyName>AddinAdapterV1ToV2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddIns\V1</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddInSideAdapters\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddIns\V1</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\Pipeline\AddInSideAdapters\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.AddIn" />
+    <Reference Include="System.AddIn.Contract" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,13 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Addin.cs" />
+    <Compile Include="AddinAdapterV1ToV2.cs" />
+    <Compile Include="CallbackConverter.cs" />
+    <Compile Include="CallbackImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AddinViewV2\AddinViewV2.csproj">
-      <Project>{aff5f57d-5612-4138-b6ab-27810f5550a4}</Project>
-      <Name>AddinViewV2</Name>
+    <ProjectReference Include="..\..\V1\AddinView\AddinView.csproj">
+      <Project>{e798c8f0-0610-4aec-aee1-26432b6333b5}</Project>
+      <Name>AddinView</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ContractV2\ContractV2.csproj">
+      <Project>{896fc81d-471c-4a78-aa5e-9d92126495f2}</Project>
+      <Name>ContractV2</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

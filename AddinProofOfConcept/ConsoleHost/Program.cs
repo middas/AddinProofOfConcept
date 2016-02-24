@@ -32,17 +32,40 @@ namespace ConsoleHost
             // Search for add-ins of type ICalculator (the host view of the add-in).
             Collection<AddInToken> tokens = AddInStore.FindAddIns(typeof(IV2), addInRoot);
 
-            // Ask the user which add-in they would like to use.
-            AddInToken token = tokens.FirstOrDefault();
+            AddInToken token = null;
+            if (tokens.Count > 1)
+            {
+                Console.WriteLine("Select a version:");
 
-            // Activate the selected AddInToken in a new application domain
-            // with the Internet trust level.
-            IV2 v2 = token.Activate<IV2>(AddInSecurityLevel.Internet);
-            v2.Initialize(new CallbackHandler());
+                for (int i = 0; i < tokens.Count; i++)
+                {
+                    Console.WriteLine("{0}: {1}", i, tokens[i].Name);
+                }
 
-            // Run the add-in.
-            v2.WriteToConsole("Hello World!");
-            Console.WriteLine(v2.GetName());
+                var key = Console.ReadKey();
+                Console.WriteLine();
+
+                if (key.KeyChar == '0')
+                {
+                    token = tokens[0];
+                }
+                else
+                {
+                    token = tokens[1];
+                }
+            }
+
+            if (token != null)
+            {
+                // Activate the selected AddInToken in a new application domain
+                // with the Internet trust level.
+                IV2 v2 = token.Activate<IV2>(AddInSecurityLevel.Internet);
+                v2.Initialize(new CallbackHandler());
+
+                // Run the add-in.
+                v2.WriteToConsole("Hello World From Host!");
+                Console.WriteLine(v2.GetName());
+            }
         }
     }
 }
