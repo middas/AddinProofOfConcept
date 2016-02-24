@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HostView\HostView.csproj">
       <Project>{5f22254c-fdc6-460f-b71a-8fdad8a4c812}</Project>
       <Name>HostView</Name>
