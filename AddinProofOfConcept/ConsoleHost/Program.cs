@@ -1,4 +1,4 @@
-﻿using HostView.V1;
+﻿using HostViewV2.V2;
 using System;
 using System.AddIn.Hosting;
 using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ namespace ConsoleHost
 {
     internal class Program
     {
-        private class CallbackHandler : ICallback
+        private class CallbackHandler : ICallbackV2
         {
             public void DoWork()
             {
@@ -30,19 +30,19 @@ namespace ConsoleHost
             }
 
             // Search for add-ins of type ICalculator (the host view of the add-in).
-            Collection<AddInToken> tokens = AddInStore.FindAddIns(typeof(IV1), addInRoot);
+            Collection<AddInToken> tokens = AddInStore.FindAddIns(typeof(IV2), addInRoot);
 
             // Ask the user which add-in they would like to use.
             AddInToken token = tokens.FirstOrDefault();
 
             // Activate the selected AddInToken in a new application domain
             // with the Internet trust level.
-            IV1 v1 = token.Activate<IV1>(AddInSecurityLevel.Internet);
-            v1.Initialize(new CallbackHandler());
+            IV2 v2 = token.Activate<IV2>(AddInSecurityLevel.Internet);
+            v2.Initialize(new CallbackHandler());
 
             // Run the add-in.
-            v1.WriteToConsole();
-            Console.WriteLine(v1.GetName());
+            v2.WriteToConsole("Hello World!");
+            Console.WriteLine(v2.GetName());
         }
     }
 }
