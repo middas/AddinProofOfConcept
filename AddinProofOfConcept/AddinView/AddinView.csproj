@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICallback.cs" />
     <Compile Include="IV1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

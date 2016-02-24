@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddinAdapter.cs" />
+    <Compile Include="CallbackConverter.cs" />
+    <Compile Include="CallbackImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

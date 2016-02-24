@@ -8,6 +8,14 @@ namespace ConsoleHost
 {
     internal class Program
     {
+        private class CallbackHandler : ICallback
+        {
+            public void DoWork()
+            {
+                Console.WriteLine("Successfully called DoWork()");
+            }
+        }
+
         private static void Main(string[] args)
         {
             // Assume that the current directory is the application folder,
@@ -15,7 +23,7 @@ namespace ConsoleHost
             string addInRoot = Environment.CurrentDirectory + "\\Pipeline";
 
             // Update the cache files of the pipeline segments and add-ins.
-            string[] warnings = AddInStore.Update(addInRoot);
+            string[] warnings = AddInStore.Rebuild(addInRoot);
             foreach (string warning in warnings)
             {
                 Console.WriteLine(warning);
@@ -30,6 +38,7 @@ namespace ConsoleHost
             // Activate the selected AddInToken in a new application domain
             // with the Internet trust level.
             IV1 v1 = token.Activate<IV1>(AddInSecurityLevel.Internet);
+            v1.Initialize(new CallbackHandler());
 
             // Run the add-in.
             v1.WriteToConsole();

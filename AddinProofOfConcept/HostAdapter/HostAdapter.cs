@@ -25,5 +25,10 @@ namespace HostAdapter
         {
             _contract.WriteToConsole();
         }
+
+        public void Initialize(ICallback callback)
+        {
+            _contract.Initialize(CallbackConverter.ToContract(callback));
+        }
     }
 }

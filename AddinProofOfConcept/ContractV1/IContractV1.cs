@@ -9,5 +9,7 @@ namespace ContractV1
         string GetName();
 
         void WriteToConsole();
+
+        void Initialize(ICallbackContractV1 callback);
     }
 }

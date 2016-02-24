@@ -5,5 +5,7 @@
         string GetName();
 
         void WriteToConsole();
+
+        void Initialize(ICallback callback);
     }
 }

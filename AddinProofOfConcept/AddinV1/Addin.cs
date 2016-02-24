@@ -7,6 +7,8 @@ namespace AddinV1
     [AddIn("AddinV1")]
     public class Addin : IV1
     {
+        private ICallback _callback;
+
         public string GetName()
         {
             return "Addin V1";
@@ -15,6 +17,12 @@ namespace AddinV1
         public void WriteToConsole()
         {
             Console.WriteLine("Hello World!");
+            _callback.DoWork();
+        }
+
+        public void Initialize(ICallback callback)
+        {
+            _callback = callback;
         }
     }
 }

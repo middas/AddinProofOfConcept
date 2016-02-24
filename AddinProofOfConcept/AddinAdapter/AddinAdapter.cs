@@ -23,5 +23,10 @@ namespace AddinAdapter
         {
             _contract.WriteToConsole();
         }
+
+        public void Initialize(ICallbackContractV1 callback)
+        {
+            _contract.Initialize(CallbackConverter.FromContract(callback));
+        }
     }
 }
