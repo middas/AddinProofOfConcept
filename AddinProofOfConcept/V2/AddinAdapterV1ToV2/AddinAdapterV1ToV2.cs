@@ -30,5 +30,10 @@ namespace AddinAdapterV1ToV2.V2
             Debug.WriteLine("Outout is ignored: ", output);
             _view.WriteToConsole();
         }
+
+        public object GetSource()
+        {
+            return null;
+        }
     }
 }

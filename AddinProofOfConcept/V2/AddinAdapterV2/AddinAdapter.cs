@@ -28,5 +28,10 @@ namespace AddinAdapterV2.V2
         {
             _view.WriteToConsole(output);
         }
+
+        public object GetSource()
+        {
+            return _view.GetSource();
+        }
     }
 }

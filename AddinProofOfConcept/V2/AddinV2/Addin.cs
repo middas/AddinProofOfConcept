@@ -1,6 +1,9 @@
 ﻿using AddinViewV2.V2;
 using System;
 using System.AddIn;
+using System.AddIn.Pipeline;
+using System.Diagnostics;
+using System.Timers;
 
 namespace AddinV2.V2
 {
@@ -23,6 +26,11 @@ namespace AddinV2.V2
         {
             Console.WriteLine("Writing output from host: {0}", output);
             _callback.DoWork();
+        }
+
+        public object GetSource()
+        {
+            return Stopwatch.StartNew();
         }
     }
 }

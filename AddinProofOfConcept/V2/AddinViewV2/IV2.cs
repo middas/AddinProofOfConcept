@@ -10,5 +10,7 @@ namespace AddinViewV2.V2
         void Initialize(ICallbackV2 callback);
 
         void WriteToConsole(string output);
+
+        object GetSource();
     }
 }

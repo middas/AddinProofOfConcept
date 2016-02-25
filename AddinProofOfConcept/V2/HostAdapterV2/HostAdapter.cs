@@ -30,5 +30,10 @@ namespace HostAdapterV2.V2
         {
             _contract.WriteToConsole(output);
         }
+
+        public object GetSource()
+        {
+            return _contract.GetSource();
+        }
     }
 }

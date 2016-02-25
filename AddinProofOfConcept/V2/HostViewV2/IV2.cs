@@ -7,5 +7,7 @@
         void Initialize(ICallbackV2 callback);
 
         void WriteToConsole(string output);
+
+        object GetSource();
     }
 }

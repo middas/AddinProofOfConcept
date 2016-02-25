@@ -11,5 +11,7 @@ namespace ContractV2.V2
         void Initialize(ICallbackContractV2 callback);
 
         void WriteToConsole(string output);
+
+        object GetSource();
     }
 }
