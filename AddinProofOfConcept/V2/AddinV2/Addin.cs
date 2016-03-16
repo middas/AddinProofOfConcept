@@ -1,9 +1,6 @@
 ﻿using AddinViewV2.V2;
 using System;
 using System.AddIn;
-using System.AddIn.Pipeline;
-using System.Diagnostics;
-using System.Timers;
 
 namespace AddinV2.V2
 {
@@ -12,25 +9,32 @@ namespace AddinV2.V2
     {
         private ICallbackV2 _callback;
 
+        public event EventHandler<string> OnEvent;
+
         public string GetName()
         {
             return "Addin V2";
         }
 
+        public object GetSource()
+        {
+            return "string as object";
+        }
+
         public void Initialize(ICallbackV2 callback)
         {
             _callback = callback;
+
+            if (OnEvent != null)
+            {
+                OnEvent(this, "Initialized called from Plugin");
+            }
         }
 
         public void WriteToConsole(string output)
         {
             Console.WriteLine("Writing output from host: {0}", output);
             _callback.DoWork();
-        }
-
-        public object GetSource()
-        {
-            return Stopwatch.StartNew();
         }
     }
 }

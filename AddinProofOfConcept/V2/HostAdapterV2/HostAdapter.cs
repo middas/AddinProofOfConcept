@@ -1,5 +1,6 @@
 ﻿using ContractV2.V2;
 using HostViewV2.V2;
+using System;
 using System.AddIn.Pipeline;
 
 namespace HostAdapterV2.V2
@@ -16,9 +17,38 @@ namespace HostAdapterV2.V2
             _handle = new ContractHandle(contract);
         }
 
+        public event EventHandler<string> OnEvent
+        {
+            add
+            {
+                if (_OnEvent == null)
+                {
+                    _contract.OnEventAdd(new EventHandlerViewToContractAdapter(FireOnEvent));
+                }
+
+                _OnEvent += value;
+            }
+            remove
+            {
+                _OnEvent -= value;
+
+                if (_OnEvent == null)
+                {
+                    _contract.OnEventRemove(new EventHandlerViewToContractAdapter(FireOnEvent));
+                }
+            }
+        }
+
+        private event EventHandler<string> _OnEvent;
+
         public string GetName()
         {
             return _contract.GetName();
+        }
+
+        public object GetSource()
+        {
+            return _contract.GetSource();
         }
 
         public void Initialize(ICallbackV2 callback)
@@ -31,9 +61,12 @@ namespace HostAdapterV2.V2
             _contract.WriteToConsole(output);
         }
 
-        public object GetSource()
+        private void FireOnEvent(string message)
         {
-            return _contract.GetSource();
+            if (_OnEvent != null)
+            {
+                _OnEvent(this, message);
+            }
         }
     }
 }

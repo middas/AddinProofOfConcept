@@ -2,8 +2,6 @@
 using System;
 using System.AddIn.Hosting;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
 
 namespace ConsoleHost
 {
@@ -52,19 +50,20 @@ namespace ConsoleHost
             {
                 // Activate the selected AddInToken in a new application domain
                 // with the Internet trust level.
-                IV2 v2 = token.Activate<IV2>(AppDomain.CurrentDomain);
+                IV2 v2 = token.Activate<IV2>(AddInSecurityLevel.Internet);
+                v2.OnEvent += (sender, message) => { Console.WriteLine("Event Fired: {0}", message); };
                 v2.Initialize(new CallbackHandler());
 
                 // Run the add-in.
                 v2.WriteToConsole("Hello World From Host!");
                 Console.WriteLine(v2.GetName());
 
-                var test = (Stopwatch)v2.GetSource();
+                //var test = (Stopwatch)v2.GetSource();
 
-                Task.Delay(500).Wait();
+                //Task.Delay(500).Wait();
 
-                test.Stop();
-                Console.WriteLine(test.ElapsedTicks);
+                //test.Stop();
+                //Console.WriteLine(test.ElapsedTicks);
             }
         }
 

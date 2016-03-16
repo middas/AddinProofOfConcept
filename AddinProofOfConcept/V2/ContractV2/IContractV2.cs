@@ -8,10 +8,19 @@ namespace ContractV2.V2
     {
         string GetName();
 
+        object GetSource();
+
         void Initialize(ICallbackContractV2 callback);
 
-        void WriteToConsole(string output);
+        void OnEventAdd(IEventHandlerContractV2 handler);
 
-        object GetSource();
+        void OnEventRemove(IEventHandlerContractV2 handler);
+
+        void WriteToConsole(string output);
+    }
+
+    public interface IEventHandlerContractV2 : IContract
+    {
+        void Handle(string message);
     }
 }

@@ -45,6 +45,8 @@
     <Compile Include="AddinAdapter.cs" />
     <Compile Include="CallbackConverter.cs" />
     <Compile Include="CallbackImpl.cs" />
+    <Compile Include="EventHandlerAdapter.cs" />
+    <Compile Include="EventHandlerContractToViewAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

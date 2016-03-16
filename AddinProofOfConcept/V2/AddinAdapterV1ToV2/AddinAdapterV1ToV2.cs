@@ -20,20 +20,28 @@ namespace AddinAdapterV1ToV2.V2
             return _view.GetName();
         }
 
+        public object GetSource()
+        {
+            return null;
+        }
+
         public void Initialize(ICallbackContractV2 callback)
         {
             _view.Initialize(CallbackConverter.FromContractV2(callback));
+        }
+
+        public void OnEventAdd(IEventHandlerContractV2 handler)
+        {
+        }
+
+        public void OnEventRemove(IEventHandlerContractV2 handler)
+        {
         }
 
         public void WriteToConsole(string output)
         {
             Debug.WriteLine("Outout is ignored: ", output);
             _view.WriteToConsole();
-        }
-
-        public object GetSource()
-        {
-            return null;
         }
     }
 }
